@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'pages/splash/splash_app.dart';
+import 'theme/theme_app.dart';
+import 'theme/custom_theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +14,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo App',
-      theme: ThemeData(primarySwatch: Colors.blue),
+      theme: AppTheme.lightTheme,
+      darkTheme: CustomTheme.purpleDarkTheme,
       home: const SplashScreen(),
       debugShowCheckedModeBanner: false,
     );

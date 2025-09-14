@@ -51,6 +51,12 @@ class _LoginScreenState extends State<LoginScreen> {
       final username = _usernameController.text;
       final password = _passwordController.text;
 
+      //Mostrar en consola el usuario y contraseña
+      print('=== Datos de Login ===');
+      print('Email: $username');
+      print('Contraseña: $password');
+      print('=====================');
+
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
@@ -58,13 +64,16 @@ class _LoginScreenState extends State<LoginScreen> {
               HomeScreen(username: username, password: password),
         ),
       );
+    } else {
+      // ignore: avoid_print
+      print('Error en la validacion del formulario');
     }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(title: 'Iniciar Sesión'),
+      appBar: const CustomAppBar(title: 'Inicio de Sesión'),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Form(
@@ -83,7 +92,12 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
-                    return 'Por favor ingrese su usuario';
+                    return 'Por favor ingrese su correo electronico';
+                  }
+                  if (!RegExp(
+                    r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$',
+                  ).hasMatch(value)) {
+                    return 'Por favor ingrese un correo electronico valido';
                   }
                   return null;
                 },
@@ -101,6 +115,11 @@ class _LoginScreenState extends State<LoginScreen> {
                   if (value == null || value.isEmpty) {
                     return 'Por favor ingrese su contraseña';
                   }
+                  if (!RegExp(
+                    r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,16}$',
+                  ).hasMatch(value)) {
+                    return 'Contraseña: 8-16 caracteres, mayúscula, minúscula, número y carácter especial';
+                  }
                   return null;
                 },
               ),
@@ -115,7 +134,7 @@ class _LoginScreenState extends State<LoginScreen> {
               const SizedBox(height: 20),
               TextButton(
                 onPressed: _navigateToRegister,
-                child: const Text('¿No tienes cuenta? Regístrate aquí'),
+                child: const Text('¿No tienes cuenta? Regístrate de una'),
               ),
             ],
           ),
