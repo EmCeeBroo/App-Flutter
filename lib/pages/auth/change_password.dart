@@ -3,6 +3,8 @@ import '../../widgets/appbar.dart';
 
 // Convertir a StatefulWidget y agregar formulario real
 class ChangePasswordScreen extends StatefulWidget {
+  const ChangePasswordScreen({super.key});
+
   @override
   _ChangePasswordScreenState createState() => _ChangePasswordScreenState();
 }

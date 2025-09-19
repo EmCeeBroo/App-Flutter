@@ -54,7 +54,7 @@ class _SplashScreenState extends State<SplashScreen>
               Image.asset('assets/img/logos/stamp.webp', height: 100),
               const SizedBox(height: 20),
               const Text(
-                'Mi App Flutter',
+                '',
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,

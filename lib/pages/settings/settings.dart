@@ -21,9 +21,9 @@ class SettingsScreen extends StatelessWidget {
           _buildSettingsTile(
             context,
             icon: Icons.email_outlined,
-            iconColor: Colors.blue,
-            title: 'Cambiar Email',
-            subtitle: 'Actualiza tu dirección de correo electrónico',
+            iconColor: const Color(0xFF673AB7),
+            title: 'Cambiar Correo Electrónico',
+            subtitle: 'Actualizar dirección de correo electrónico',
             onTap: () {
               _showEmailChangeDialog(context);
             },
@@ -35,9 +35,9 @@ class SettingsScreen extends StatelessWidget {
           _buildSettingsTile(
             context,
             icon: Icons.lock_outlined,
-            iconColor: Colors.blue,
+            iconColor: const Color(0xFF673AB7),
             title: 'Cambiar Contraseña',
-            subtitle: 'Establece una nueva contraseña segura',
+            subtitle: 'Establece una nueva contraseña',
             onTap: () {
               Navigator.push(
                 context,
@@ -56,9 +56,9 @@ class SettingsScreen extends StatelessWidget {
           _buildSettingsTile(
             context,
             icon: Icons.palette_outlined,
-            iconColor: Colors.blue,
+            iconColor: const Color(0xFF673AB7),
             title: 'Tema de la App',
-            subtitle: 'Personaliza colores y aspecto',
+            subtitle: 'Personalizar colores y aspecto',
             onTap: () {
               _showThemeSelectionDialog(context);
             },
@@ -70,7 +70,7 @@ class SettingsScreen extends StatelessWidget {
           _buildSettingsTile(
             context,
             icon: Icons.language_outlined,
-            iconColor: Colors.blue,
+            iconColor: const Color(0xFF673AB7),
             title: 'Idioma',
             subtitle: 'Selecciona el idioma de la aplicación',
             onTap: () {
@@ -144,7 +144,7 @@ class SettingsScreen extends StatelessWidget {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text('Cambiar Email'),
+        title: const Text('Cambiar Correo Electrónico'),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [

@@ -13,9 +13,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo App',
-      theme: AppTheme.lightTheme,
-      darkTheme: CustomTheme.purpleDarkTheme,
+      title: 'Dmentz Inc',
+      theme: CustomTheme.purpleTheme,
+      darkTheme: AppTheme.lightTheme,
       home: const SplashScreen(),
       debugShowCheckedModeBanner: false,
     );

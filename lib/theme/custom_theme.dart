@@ -8,7 +8,6 @@ class CustomTheme {
       primary: Color(0xFF673AB7), // Púrpura profundo
       secondary: Color(0xFFE91E63), // Rosa vibrante
       surface: Colors.white,
-      background: Color(0xFFF5F5F5),
       onPrimary: Colors.white,
       onSecondary: Colors.white,
     ),
@@ -67,7 +66,6 @@ class CustomTheme {
       primary: Color(0xFF673AB7),
       secondary: Color(0xFFE91E63),
       surface: Color(0xFF1E1E1E),
-      background: Color(0xFF121212),
       onPrimary: Colors.white,
       onSecondary: Colors.white,
     ),
