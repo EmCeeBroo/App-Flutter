@@ -1,3 +1,6 @@
+import 'package:application_login/main.dart';
+import 'package:application_login/theme/custom_theme.dart';
+import 'package:application_login/theme/theme_app.dart';
 import 'package:flutter/material.dart';
 import 'package:application_login/pages/auth/change_password.dart';
 import 'package:application_login/widgets/appbar.dart';
@@ -200,36 +203,36 @@ class SettingsScreen extends StatelessWidget {
               leading: const Icon(Icons.light_mode, color: Colors.orange),
               title: const Text('Tema Original (Azul)'),
               onTap: () {
+                MyApp.of(context)?.changeTheme(AppTheme.lightTheme);
+                Navigator.pop(context);
                 print('🎨 Tema seleccionado: Original (Azul)');
                 ScaffoldMessenger.of(context).showSnackBar(
                   const SnackBar(content: Text('Tema Original aplicado')),
-                );
-                Navigator.pop(context);
-                // Aquí aplicarías el tema original
+                );  // Aquí aplicarías el tema original
               },
             ),
             ListTile(
-              leading: const Icon(Icons.palette, color: Colors.purple),
+              leading: const Icon(Icons.palette, color: Color(0xFF7020FA)),
               title: const Text('Tema Personalizado (Púrpura)'),
               onTap: () {
+                MyApp.of(context)?.changeTheme(CustomTheme.purpleTheme);
+                Navigator.pop(context);
                 print('🎨 Tema seleccionado: Personalizado (Púrpura)');
                 ScaffoldMessenger.of(context).showSnackBar(
                   const SnackBar(content: Text('Tema Personalizado aplicado')),
-                );
-                Navigator.pop(context);
-                // Aquí aplicarías tu tema personalizado
+                );// Aquí aplicarías tu tema personalizado
               },
             ),
             ListTile(
               leading: const Icon(Icons.dark_mode, color: Colors.grey),
               title: const Text('Tema Oscuro'),
               onTap: () {
+                MyApp.of(context)?.changeTheme(ThemeData.dark());
+                Navigator.pop(context);
                 print('🎨 Tema seleccionado: Oscuro');
                 ScaffoldMessenger.of(context).showSnackBar(
                   const SnackBar(content: Text('Tema Oscuro aplicado')),
-                );
-                Navigator.pop(context);
-                // Aquí aplicarías el tema oscuro
+                );// Aquí aplicarías el tema oscuro
               },
             ),
           ],
